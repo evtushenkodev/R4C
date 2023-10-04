@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Robot
+
+
+class RobotAdmin(admin.ModelAdmin):
+    list_display = ('id', 'serial', 'model', 'version', 'created', )
+
+
+admin.site.register(Robot, RobotAdmin)
